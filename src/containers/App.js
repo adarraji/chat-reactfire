@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <AuthProvider sdk={auth}>
-        <DatabaseProvider>
+        <DatabaseProvider sdk={database}>
           <SignIn />
         </DatabaseProvider>
       </AuthProvider>
