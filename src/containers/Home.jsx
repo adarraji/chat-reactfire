@@ -10,7 +10,13 @@ const Home = () => {
     console.log(signInCheckResult);
     return (
         <div>
-            {!signInCheckResult.signedIn ? <SignIn /> : <SignOut />}
+            {
+                !signInCheckResult.signedIn ? <SignIn /> :
+                    <div>
+                        <SignOut />
+                        
+                    </div>
+            }
         </div>
     )
 }
