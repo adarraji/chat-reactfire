@@ -4,8 +4,7 @@ import { FirestoreProvider, useFirestoreDocData, useFirestore, useFirebaseApp, u
 import { getAuth } from 'firebase/auth';
 import { getDatabase } from 'firebase/database';
 import SignIn from "../components/signIn/SignIn";
-
-
+import Home from "./Home";
 
 
 function App() {
@@ -17,7 +16,7 @@ function App() {
     <div className="App">
       <AuthProvider sdk={auth}>
         <DatabaseProvider sdk={database}>
-          <SignIn />
+          <Home/>
         </DatabaseProvider>
       </AuthProvider>
     </div>
