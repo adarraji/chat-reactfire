@@ -1,6 +1,6 @@
 import "./App.css";
 import { doc, getFirestore } from 'firebase/firestore';
-import { FirestoreProvider, useFirestoreDocData, useFirestore, useFirebaseApp, useAuth, AuthProvider } from 'reactfire';
+import { FirestoreProvider, useFirestoreDocData, useFirestore, useFirebaseApp, useAuth, AuthProvider, DatabaseProvider } from 'reactfire';
 import { getAuth } from 'firebase/auth';
 import { getDatabase } from 'firebase/database';
 import SignIn from "../components/signIn/SignIn";
@@ -16,7 +16,9 @@ function App() {
   return (
     <div className="App">
       <AuthProvider sdk={auth}>
-        <SignIn />
+        <DatabaseProvider>
+          <SignIn />
+        </DatabaseProvider>
       </AuthProvider>
     </div>
   );
