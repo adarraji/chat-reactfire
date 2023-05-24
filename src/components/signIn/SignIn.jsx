@@ -1,9 +1,8 @@
 import React from "react";
-import { useAuth } from 'reactfire';
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
-const SignIn = () => {
-    const auth = useAuth();
+const SignIn = ({ auth }) => {
+
     const signInWithGoogle = async () => {
         const provider = new GoogleAuthProvider();
         await signInWithPopup(auth, provider);
