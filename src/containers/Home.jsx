@@ -2,6 +2,7 @@ import React from "react"
 import { useAuth, useSigninCheck } from 'reactfire';
 import SignIn from "../components/signIn/SignIn"
 import SignOut from "../components/signOut/SignOut"
+import ChatRoom from "../components/chatRoom/ChatRoom";
 
 
 const Home = () => {
@@ -14,7 +15,7 @@ const Home = () => {
                 !signInCheckResult.signedIn ? <SignIn /> :
                     <div>
                         <SignOut />
-                        
+                        <ChatRoom />
                     </div>
             }
         </div>
