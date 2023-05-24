@@ -4,7 +4,7 @@ import { FirestoreProvider, useFirestoreCollectionData, useFirestoreDocData, use
 
 const ChatRoom = () => {
   const firestore = useFirestore();
-  const messagesCollection = collection(firestore, 'messa');
+  const messagesCollection = collection(firestore, 'messages');
   const messagesQuery = query(messagesCollection, orderBy('createdAt'));
   const { status, data: messages } = useFirestoreCollectionData(messagesQuery, { idField: 'id', });
 

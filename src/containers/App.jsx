@@ -9,16 +9,19 @@ import Home from "./Home";
 
 function App() {
   const app = useFirebaseApp();
+  const firestoreInstance = getFirestore(useFirebaseApp());
   const database = getDatabase(app);
   const auth = getAuth(app);
 
   return (
     <div className="App">
-      <AuthProvider sdk={auth}>
-        <DatabaseProvider sdk={database}>
-          <Home/>
-        </DatabaseProvider>
-      </AuthProvider>
+      <FirestoreProvider sdk={firestoreInstance}>
+        <AuthProvider sdk={auth}>
+          <DatabaseProvider sdk={database}>
+            <Home />
+          </DatabaseProvider>
+        </AuthProvider>
+      </FirestoreProvider>
     </div>
   );
 }

@@ -12,7 +12,7 @@ const Home = () => {
     return (
         <div>
             {
-                !signInCheckResult.signedIn ? <SignIn /> :
+                !auth.currentUser ? <SignIn /> :
                     <div>
                         <SignOut />
                         <ChatRoom />
