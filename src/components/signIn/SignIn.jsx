@@ -1,12 +1,18 @@
 import React from "react";
-import { useAuth } from 'reactfire';
+import { useAuth, useUser } from "reactfire";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 const SignIn = () => {
-    const auth = useAuth();    
+    const auth = useAuth();
+    const { status, data: user } = useUser();
+
     const signInWithGoogle = async () => {
         const provider = new GoogleAuthProvider();
         await signInWithPopup(auth, provider);
+    }
+
+    if (status === "loading") {
+        return <span>loading...</span>;
     }
 
     return (
