@@ -20,7 +20,7 @@ const firebaseConfig =
 
 root.render(
   <React.StrictMode>
-    <FirebaseAppProvider>
+    <FirebaseAppProvider firebaseConfig={firebaseConfig}>
       <App />
     </FirebaseAppProvider>
   </React.StrictMode>
