@@ -15,8 +15,8 @@ const Home = () => {
 
     return (
         <div className="Home">
-            <header className="Home-header">
-                <h1>⚛️🔥💬</h1>
+            <header className="Home-hea">
+                <h1>💬</h1>
                 <SignOut />
             </header>
             <section>
