@@ -1,3 +1,4 @@
+import "./chatRoom.css";
 import React, { useState } from "react";
 import { collection, query, orderBy, doc, getFirestore, serverTimestamp, addDoc } from "firebase/firestore";
 import { useAuth, FirestoreProvider, useFirestoreCollectionData, useFirestoreDocData, useFirestore, useFirebaseApp } from "reactfire";
