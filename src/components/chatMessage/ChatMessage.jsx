@@ -1,4 +1,5 @@
-import React from "react"
+import "./chatMessage.css";
+import React from "react";
 import { useAuth } from "reactfire";
 
 const ChatMessage = ({ message }) => {
