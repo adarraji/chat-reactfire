@@ -1,6 +1,6 @@
 import React from "react";
 import "./home.css";
-import { useAuth, useSigninCheck } from "reactfire";
+import { useSigninCheck } from "reactfire";
 import SignIn from "../components/signIn/SignIn"
 import SignOut from "../components/signOut/SignOut"
 import ChatRoom from "../components/chatRoom/ChatRoom";
