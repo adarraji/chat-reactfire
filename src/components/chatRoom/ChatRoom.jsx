@@ -1,7 +1,7 @@
 import "./chatRoom.css";
 import React, { useRef, useState } from "react";
-import { collection, query, orderBy, doc, getFirestore, serverTimestamp, addDoc } from "firebase/firestore";
-import { useAuth, FirestoreProvider, useFirestoreCollectionData, useFirestoreDocData, useFirestore, useFirebaseApp } from "reactfire";
+import { collection, query, orderBy, serverTimestamp, addDoc } from "firebase/firestore";
+import { useAuth, useFirestoreCollectionData, useFirestore } from "reactfire";
 import ChatMessage from "../chatMessage/ChatMessage";
 
 const ChatRoom = () => {
@@ -25,7 +25,7 @@ const ChatRoom = () => {
       uid,
       photoURL
     })
-    setFormValue("");    
+    setFormValue("");
     ref.current.scrollIntoView({ behavior: "smooth" });
   }
 
