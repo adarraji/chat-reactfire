@@ -4,16 +4,11 @@ import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 const SignIn = () => {
     const auth = useAuth();
-    // const { status, data: user } = useUser();
-    // console.log(user);
+
     const signInWithGoogle = async () => {
         const provider = new GoogleAuthProvider();
         await signInWithPopup(auth, provider);
     }
-
-    // if (status === "loading") {
-    //     return <span>loading...</span>;
-    // }
 
     return (
         <>
