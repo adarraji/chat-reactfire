@@ -1,5 +1,5 @@
 import React from "react"
-import { useAuth } from 'reactfire';
+import { useAuth } from "reactfire";
 
 const ChatMessage = ({ message }) => {
   const { text, uid, photoURL } = message;

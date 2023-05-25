@@ -1,15 +1,35 @@
-import React from "react";
-import { collection, query, orderBy, doc, getFirestore } from 'firebase/firestore';
-import { FirestoreProvider, useFirestoreCollectionData, useFirestoreDocData, useFirestore, useFirebaseApp } from 'reactfire';
+import React, { useState } from "react";
+import { collection, query, orderBy, doc, getFirestore, serverTimestamp, addDoc } from "firebase/firestore";
+import { useAuth, FirestoreProvider, useFirestoreCollectionData, useFirestoreDocData, useFirestore, useFirebaseApp } from "reactfire";
 import ChatMessage from "../chatMessage/ChatMessage";
 
 const ChatRoom = () => {
   const firestore = useFirestore();
-  const messagesCollection = collection(firestore, 'messages');
-  const messagesQuery = query(messagesCollection, orderBy('createdAt'));
-  const { status, data: messages } = useFirestoreCollectionData(messagesQuery, { idField: 'id', });
+  const auth = useAuth();
+  const messagesRef = collection(firestore, "messages");
+  const messagesQuery = query(messagesRef, orderBy("createdAt"));
+  const { status, data: messages } = useFirestoreCollectionData(messagesQuery, { idField: "id", });
 
-  if (status === 'loading') {
+  const [formValue, setFormValue] = useState("");
+
+  const sendMessage = async (e) => {
+    e.preventDefault();
+
+    const { uid, photoURL } = auth.currentUser;
+
+    await addDoc(messagesRef, {
+      text: formValue,
+      createdAt: serverTimestamp(),
+      uid,
+      photoURL
+    })
+    setFormValue("");
+
+  }
+
+
+
+  if (status === "loading") {
     return <span>loading...</span>;
   }
 
@@ -18,7 +38,12 @@ const ChatRoom = () => {
       <main>
         {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
       </main>
-      <form>
+      <form onSubmit={sendMessage}>
+
+        <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
+
+        <button type="submit" disabled={!formValue}>🕊️</button>
+
       </form>
     </>
   );
