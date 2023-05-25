@@ -1,9 +1,8 @@
 import "./App.css";
-import { doc, getFirestore } from 'firebase/firestore';
-import { FirestoreProvider, useFirestoreDocData, useFirestore, useFirebaseApp, useAuth, AuthProvider, DatabaseProvider } from 'reactfire';
+import { getFirestore } from 'firebase/firestore';
+import { FirestoreProvider, useFirebaseApp, AuthProvider, DatabaseProvider } from 'reactfire';
 import { getAuth } from 'firebase/auth';
 import { getDatabase } from 'firebase/database';
-import SignIn from "../components/signIn/SignIn";
 import Home from "./Home";
 
 

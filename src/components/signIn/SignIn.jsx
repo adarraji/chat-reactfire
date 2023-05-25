@@ -1,6 +1,6 @@
 import "./signIn.css";
 import React from "react";
-import { useAuth, useUser } from "reactfire";
+import { useAuth } from "reactfire";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 const SignIn = () => {
