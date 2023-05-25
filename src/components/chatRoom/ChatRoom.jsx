@@ -1,6 +1,7 @@
 import React from "react";
 import { collection, query, orderBy, doc, getFirestore } from 'firebase/firestore';
 import { FirestoreProvider, useFirestoreCollectionData, useFirestoreDocData, useFirestore, useFirebaseApp } from 'reactfire';
+import ChatMessage from "../chatMessage/ChatMessage";
 
 const ChatRoom = () => {
   const firestore = useFirestore();
@@ -13,11 +14,13 @@ const ChatRoom = () => {
   }
 
   return (
-    <ul>
-      {messages.map((msg) => (
-        <li key={msg.id}>{msg.text}</li>
-      ))}
-    </ul>
+    <>
+      <main>
+        {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
+      </main>
+      <form>
+      </form>
+    </>
   );
 }
 
