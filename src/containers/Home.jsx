@@ -1,4 +1,5 @@
-import React from "react"
+import React from "react";
+import "./home.css";
 import { useAuth, useSigninCheck } from "reactfire";
 import SignIn from "../components/signIn/SignIn"
 import SignOut from "../components/signOut/SignOut"
@@ -13,15 +14,14 @@ const Home = () => {
     }
 
     return (
-        <div>
-            {
-                signInCheckResult.signedIn
-                    ? <div>
-                        <SignOut />
-                        <ChatRoom />
-                    </div>
-                    : <SignIn />
-            }
+        <div className="Home">
+            <header className="Home-header">
+                <h1>⚛️🔥💬</h1>
+                <SignOut />
+            </header>
+            <section>
+                {signInCheckResult.signedIn ? <ChatRoom /> : <SignIn />}
+            </section>
         </div >
     )
 }
