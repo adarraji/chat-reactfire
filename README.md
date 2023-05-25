@@ -22,7 +22,6 @@ To run the application
 3. Run `npm start`
 <br/>
 
-
 ## Deployment
 
 Deployed on [Netlify](https://netlify.com)
@@ -37,3 +36,19 @@ You can see the website [here](https://chat-react123.netlify.app/)
 ## Deploy status
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/714e06f0-7508-4f7d-b56f-9b3f65968ee5/deploy-status)](https://app.netlify.com/sites/chat-react123/deploys)
+
+
+## Screenshots
+<br />
+
+![Image 1](./images/image-01.png)
+<br />
+<br />
+
+![Image 2](./images/image-02.png)
+<br />
+<br />
+
+![Image 3](./images/image-03.png)
+<br />
+<br />
